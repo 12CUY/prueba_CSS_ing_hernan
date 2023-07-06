@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css_prueba/css/style1.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css_prueba/css/style4.css">
+    <title>Examen Parcial</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="ruta_del_logo.png" width="50" height="50" alt="Logo" style="float: left; margin-right: 10px;">
+            </div>
+            <div class="col-md-6">
+              <nav class="navbar navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="/css_prueba/html/index1.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/css_prueba/html/index2.html">Menú</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/css_prueba/html/index3.html">Pedidos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/css_prueba/html/index4.html">Modal</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+<br>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal1">Realizar pedido</button>
+
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1Label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal1Label">Realizar pedido</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="producto1">Producto 1:</label>
+            <input type="text" class="form-control" id="producto1" placeholder="Ingrese el nombre del producto">
+          </div>
+          <div class="form-group">
+            <label for="producto2">Producto 2:</label>
+            <input type="text" class="form-control" id="producto2" placeholder="Ingrese el nombre del producto">
+          </div>
+          <div class="form-group">
+            <label for="producto3">Producto 3:</label>
+            <input type="text" class="form-control" id="producto3" placeholder="Ingrese el nombre del producto">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" onclick="enviarPedido()">Enviar Pedido</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 2 -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal2">Modificar pedido</button>
+
+<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2Label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal2Label">Modificar pedido</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="producto1">Producto 1:</label>
+            <input type="text" class="form-control" id="producto1" placeholder="Ingrese el nombre del producto">
+          </div>
+          <div class="form-group">
+            <label for="producto2">Producto 2:</label>
+            <input type="text" class="form-control" id="producto2" placeholder="Ingrese el nombre del producto">
+          </div>
+          <div class="form-group">
+            <label for="producto3">Producto 3:</label>
+            <input type="text" class="form-control" id="producto3" placeholder="Ingrese el nombre del producto">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" onclick="modificarPedido()">Modificar Pedido</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal3">Cancelar pedido</button>
+
+<div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="modal3Label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal3Label">Cancelar pedido</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>¿Está seguro de que desea cancelar el pedido?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="cancelarPedido()">Sí, Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Alerta -->
+<div class="alert alert-success mt-3" role="alert" style="display: none;" id="alerta">
+  Pedido enviado exitosamente.
+</div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2023 Prueba. Todos los derechos reservados. Wiliam Morales</p>
+  </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/css_prueba/js/pedidos_modal.js"></script>
+</body>
+</html>
